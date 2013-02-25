@@ -17,16 +17,18 @@ public class FirstOddPicker {
         Set<Character> charsAlreadyRead = new LinkedHashSet<Character>();
         Character n = null;
 
-        if(null != stream){
-            while (stream.hasNext()){
-                n = Character.toLowerCase(stream.getNext());
+        if(null == stream){
+            return null;
+        }
 
-                if(charsAlreadyRead.isEmpty()){
-                    charsAlreadyRead.add(n);
-                }
-                else if(!charsAlreadyRead.contains(n)){
-                    return n;
-                }
+        while (stream.hasNext()){
+            n = Character.toLowerCase(stream.getNext());
+
+            if(charsAlreadyRead.isEmpty()){
+                charsAlreadyRead.add(n);
+            }
+            else if(!charsAlreadyRead.contains(n)){
+                return n;
             }
         }
 
