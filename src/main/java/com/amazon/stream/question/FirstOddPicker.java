@@ -14,17 +14,17 @@ import java.util.Set;
  */
 public class FirstOddPicker {
     public Character identifyFirstOddFromStream(Stream stream) {
-        Set<Character> jaFoi = new LinkedHashSet<Character>();
+        Set<Character> charsAlreadyRead = new LinkedHashSet<Character>();
         Character n = null;
 
         if(null != stream){
             while (stream.hasNext()){
                 n = Character.toLowerCase(stream.getNext());
 
-                if(jaFoi.isEmpty()){
-                    jaFoi.add(n);
+                if(charsAlreadyRead.isEmpty()){
+                    charsAlreadyRead.add(n);
                 }
-                else if(!jaFoi.contains(n)){
+                else if(!charsAlreadyRead.contains(n)){
                     return n;
                 }
             }
